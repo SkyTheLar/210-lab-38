@@ -41,7 +41,7 @@ int main() {
     	switch (choice) {
     	case 1: addCode(tree); break;
     	case 2: delCode(tree); break;
-    	case 3: break;
+    	case 3: findCode(tree); break;
     	case 4: break;
     	default: break;
     	}
@@ -82,8 +82,14 @@ void delCode(BinaryTree& t) {
 	cout << temp << " is no longer in records!\n";
 }
 
-void findCode(BinaryTree) {
-
+void findCode(BinaryTree& t) {
+	string temp;
+	cout << "Enter the code to search for: ";
+	getline(cin, temp);
+	if (t.searchNode(temp))
+		cout << temp << " found!\n";
+	else
+		cout << temp << " not in records.\n";
 }
 
 void changeCode(BinaryTree&) {

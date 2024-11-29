@@ -73,7 +73,7 @@ void BinaryTree::deleteNode(string code, TreeNode *&nodePtr) {
 	   makeDeletion(nodePtr);
 	   return;
    }
-   else if (!(nodePtr->left) && !(nodePtr->right)) {
+   else if ((!(nodePtr->left)) && (!(nodePtr->right))) {
 	   cout << code << " not in tree.\n";
 	   return;
    }
