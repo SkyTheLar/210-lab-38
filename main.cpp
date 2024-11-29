@@ -13,7 +13,7 @@ using namespace std;
 int menu();
 void addCode(BinaryTree&);
 void delCode(BinaryTree&);
-void findCode(BinaryTree);
+void findCode(BinaryTree&);
 void changeCode(BinaryTree&);
 
 int main() {
@@ -42,7 +42,7 @@ int main() {
     	case 1: addCode(tree); break;
     	case 2: delCode(tree); break;
     	case 3: findCode(tree); break;
-    	case 4: break;
+    	case 4: changeCode(tree); break;
     	default: break;
     	}
     	choice = menu();
@@ -92,6 +92,17 @@ void findCode(BinaryTree& t) {
 		cout << temp << " not in records.\n";
 }
 
-void changeCode(BinaryTree&) {
-
+void changeCode(BinaryTree& t) {
+	string temp;
+	cout << "Enter the code to modify: ";
+	getline(cin, temp);
+	if (!t.searchNode(temp)) {
+		cout << "Can't modify code not in records.\n";
+		return;
+	}
+	t.remove(temp);
+	cout << "Enter new version of the code: ";
+	getline(cin, temp);
+	t.insertNode(temp);
+	cout << "Code modified!\n";
 }
