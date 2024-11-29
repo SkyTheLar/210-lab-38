@@ -1,12 +1,12 @@
-// Specification file for the IntBinaryTree class
-#ifndef INTBINARYTREE_H
-#define INTBINARYTREE_H
+// Specification file for the BinaryTree class
+#ifndef BINARYTREE_H
+#define BINARYTREE_H
 using namespace std;
 
-// The IntBinaryTree class manages a binary tree of integers.
-class IntBinaryTree {
+// The BinaryTree class manages a binary tree of integers.
+class BinaryTree {
 private:
-   // TreeNode is a private structure for IntBinaryTree nodes.
+   // TreeNode is a private structure for BinaryTree nodes.
    struct TreeNode {
       string value;         // The value in the node
       TreeNode *left;    // Pointer to left child node
@@ -27,10 +27,10 @@ private:
 
 public:
    // Constructor initializes the root to nullptr, indicating an empty tree.
-   IntBinaryTree()     { root = nullptr; }
+   BinaryTree()     { root = nullptr; }
 
    // Destructor deallocates all nodes in the tree.
-   ~IntBinaryTree()    { destroySubTree(root); }
+   ~BinaryTree()    { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
    void insertNode(string);
@@ -43,4 +43,4 @@ public:
    void displayPostOrder() const   {  displayPostOrder(root); }
 };
 
-#endif // INTBINARYTREE_H
+#endif // BINARYTREE_H
