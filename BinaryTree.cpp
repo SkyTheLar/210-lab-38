@@ -69,12 +69,18 @@ void BinaryTree::remove(string code) {
 // deleteNode deletes the node whose value 
 // member is the same as num.              
 void BinaryTree::deleteNode(string code, TreeNode *&nodePtr) {
-   if (code < nodePtr->value)
+   if (code == nodePtr->value) {
+	   makeDeletion(nodePtr);
+	   return;
+   }
+   else if (!(nodePtr->left) && !(nodePtr->right)) {
+	   cout << code << " not in tree.\n";
+	   return;
+   }
+   else if (code < nodePtr->value)
       deleteNode(code, nodePtr->left);
    else if (code > nodePtr->value)
       deleteNode(code, nodePtr->right);
-   else
-      makeDeletion(nodePtr);
 }
 
 
