@@ -78,6 +78,10 @@ void delCode(BinaryTree& t) {
 	string temp;
 	cout << "Enter the code to delete: ";
 	getline(cin, temp);
+	if (!t.searchNode(temp)) {
+		cout << "Can't delete code not in records.\n";
+		return;
+	}
 	t.remove(temp);
 	cout << temp << " is no longer in records!\n";
 }
